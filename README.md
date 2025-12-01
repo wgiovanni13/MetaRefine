@@ -1,4 +1,4 @@
-# M E T A R E F I N E
+# METAREFINE
 
 [MetaRefine Logo]
 
@@ -106,9 +106,6 @@ Polished Assembly → Multi-tool Annotation:
            ↓
     Final Annotation (.gff)+ Report
 ```
-
----
-
 ### 3.2. Pipeline Architecture for Validation & Improvement Analysisi in Lokiarchaeon B-35
 
 ```
