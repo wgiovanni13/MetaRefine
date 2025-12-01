@@ -1,0 +1,23 @@
+# Nextflow work & results
+work/
+*/work/
+results/
+*/results/
+
+# Nextflow reports / logs (often reproducible)
+*.log
+*.trace.txt
+*.timeline.html
+*.report.html
+
+# Large external databases (must NOT live in the repo)
+DIAMOND_db/
+uniclust30/
+PDB70_db/
+*.dmnd
+
+# Compressed archives
+*.gz
+*.zip
+*.tar
+*.tar.gz
