@@ -143,6 +143,7 @@ Layer C: Validation of Genome Correction
 Deletion of conflict region & Reannotation | Coverage-based improvement (short reads)
 
 ---
+```
 
 ## 4. WHEN SHOULD USERS RUN EACH PIPELINE?
 
