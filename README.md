@@ -1,8 +1,35 @@
-# METAREFINE
+<p align="center">
+  <img src="assets/metarefine_logo.png" width="300">
+</p>
 
-[MetaRefine Logo]
+<h1 align="center">MetaRefine: A Modular Framework for Prokaryotic Genome Refinement</h1>
 
-**MetaRefine: Metagenomic Annotation Refinement	Pipeline**
+<p align="center">
+<a href="https://github.com/wgiovanni13/MetaRefine/issues"><img src="https://img.shields.io/github/issues/wgiovanni13/MetaRefine"></a>
+<a href="https://github.com/wgiovanni13/MetaRefine"><img src="https://img.shields.io/github/last-commit/wgiovanni13/MetaRefine"></a>
+<a href="LICENSE"><img src="https://img.shields.io/github/license/wgiovanni13/MetaRefine"></a>
+<img src="https://img.shields.io/badge/Nextflow-DSL2-blue">
+<img src="https://img.shields.io/badge/Category-Genomics-success">
+</p>
+
+---
+
+# Table of Contents
+
+- [About the project](#about-the-project)
+- [Biological & Conceptual Overview](#biological-and-conceptual-overview)
+- [Lokiarchaeon as a case of study](#lokiarchaeon-as-a-case-of-study)
+- [Pipeline architecture](#pipeline-architecture)
+- [When should users run each pipeline?](#when-should-users-run-each-pipeline)
+- [Dependencies & External Resources](#dependencies-and-external-resources)
+- [Installation](#installation)
+- [Quick start](#quick-start)
+- [Contact](#contact)
+- [Acknowledgements](#acknowledgements)
+
+---
+
+## 1. About the project
 
 *MetaRefine is a modular Nextflow-based suite for **Prokaryotic Genome Refinement** that integrates:
 
@@ -18,7 +45,7 @@ Although the framework is demonstrated on a **Lokiarchaeota B-35** genome, it is
 
 ---
 
-## 1. BIOLOGICAL & CONCEPTUAL OVERVIEW
+## 2. Biological & Conceptual Overview
 
 High-throughput sequencing has enabled reconstruction of prokaryotic genomes directly from complex environments. However:
 
@@ -28,7 +55,7 @@ High-throughput sequencing has enabled reconstruction of prokaryotic genomes dir
 
 ---
 
-## 2. LOKIARCHAEON AS A CASE OF STUDY
+## 3. Lokiarchaeon as a case of study
 
 It is used to demonstrate:
 
@@ -38,9 +65,9 @@ It is used to demonstrate:
 
 ---
 
-## 3. PIPELINE ARCHITECTURE
+## 4. Pipeline architecture
 
-### 3.1. Pipeline Architecture for users 
+### 4.1. Pipeline Architecture for users 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -106,7 +133,7 @@ Polished Assembly → Multi-tool Annotation:
            ↓
     Final Annotation (.gff)+ Report
 ```
-### 3.2. Pipeline Architecture for Validation & Improvement Analysisi in Lokiarchaeon B-35
+### 4.2. Pipeline Architecture for Validation & Improvement Analysisi in Lokiarchaeon B-35
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -145,11 +172,11 @@ Deletion of conflict region & Reannotation | Coverage-based improvement (short r
 ---
 ```
 
-## 4. WHEN SHOULD USERS RUN EACH PIPELINE?
+## 5. When should users run each pipeline?
 
 MetaRefine is modular: users do **not** need to run all pipelines. Typical use-cases:
 
-### 4.1. Only a finished genome (no reads available)
+### 5.1. Only a finished genome (no reads available)
 
 You have a prokaryotic genome FASTA, but no raw sequencing data.
 
@@ -158,7 +185,7 @@ You have a prokaryotic genome FASTA, but no raw sequencing data.
 - Goal: refine gene models, detect frameshifts, identify new functional genes supported by homology and structure (DIAMOND + HHsuite).
 
 
-### 4.2. Metagenomic long + short reads
+### 5.2. Metagenomic long + short reads
 
 You have **Nanopore** and **Illumina short reads** from a metagenomic sample:
 
@@ -171,7 +198,7 @@ You have **Nanopore** and **Illumina short reads** from a metagenomic sample:
 - Goal: obtain a high-quality, polished genome and a refined annotation starting from raw metagenomic reads.
 
 
-### 4.3. Metatranscriptomic reads with a reference / polished genome
+### 5.3. Metatranscriptomic reads with a reference / polished genome
 
 You have **RNA-seq short reads** (metatranscriptome) and a reference genome (either from literature or from Pipeline 1).
 
@@ -187,7 +214,7 @@ You have **RNA-seq short reads** (metatranscriptome) and a reference genome (eit
 - Goal: use expression evidence to support or challenge your annotation and identify candidate corrections.
 
 
-### 4.4. Full MetaRefine workflow
+### 5.4. Full MetaRefine workflow
 
 You have:
 
@@ -206,9 +233,9 @@ You have:
 
 ---
 
-## 5. DEPENDENCIES & EXTERNAL RESOURCES
+## 6. Dependencies & External Resources
 
-### 5.1 Core Dependencies
+### 6.1 Core Dependencies
 
 - Nextflow (≥ 21.x, DSL2 enabled)
 - Java 8 or newer
@@ -216,7 +243,7 @@ You have:
 - R
 - Conda/mamba or HPC modules
 
-### 5.2 Bioinformatics tools
+### 6.2 Bioinformatics tools
 
 **Metagenome assembly & polishing (Pipeline 1)**
 
@@ -256,7 +283,7 @@ Same tools as above, plus:
 pysam (for transcriptome validation scripts)
 additional Python utilities for genome correction and coverage analysis
 
-### 5.3 External Databases
+### 6.3 External Databases
 
 - UniRef90 DIAMOND database (~45 GB)
 - UniClust30 (~86 GB)
@@ -264,7 +291,7 @@ additional Python utilities for genome correction and coverage analysis
 
 ---
 
-## 6. INSTALLATION
+## 7. Installation
 
 ```bash
 
@@ -282,7 +309,7 @@ conda env create -f envs/pipeline4.yml
 
 ```
 
-## 7. QUICK START: RUNNING EACH PIPELINE
+## 8. Quick Start: Running each pipeline
 
 ### Run Individual Pipelines
 
@@ -345,13 +372,13 @@ nextflow run compare_genomes.nf \
 ```
 ---
 
-## 8. CONTACT
+## 9. Contact
 
 - **Email:** wagner.guzman@gmi.oeaw.ac.at
 
 ---
 
-## 9. ACKNOWLEDGEMENTS
+## 10. Acknowledgements
 
 - **Lab:** Berger Lab and IT Resources
 
