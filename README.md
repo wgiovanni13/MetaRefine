@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="metarefine_diagram.png" width="300" alt="Logo">
+  <img src="metarefine_diagram.png" width="600" height="400" alt="Diagram">
 </p>
 
 <h1 align="center">MetaRefine: A Modular Framework for Prokaryotic Genome Refinement</h1>
