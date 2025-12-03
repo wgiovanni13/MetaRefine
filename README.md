@@ -16,16 +16,16 @@
 
 # Table of Contents
 
-- [About the project](#about-the-project)
-- [Biological & Conceptual Overview](#biological-and-conceptual-overview)
-- [Lokiarchaeon as a case of study](#lokiarchaeon-as-a-case-of-study)
-- [Pipeline architecture](#pipeline-architecture)
-- [When should users run each pipeline?](#when-should-users-run-each-pipeline)
-- [Dependencies & External Resources](#dependencies-and-external-resources)
-- [Installation](#installation)
-- [Quick start](#quick-start)
-- [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+- [About the project](#About-the-project)
+- [Biological & Conceptual Overview](Bbiological-&-Conceptual-Overview)
+- [Lokiarchaeon as a case of study](#Lokiarchaeon-as-a-case-of-study)
+- [Pipeline architecture](#Pipeline-architecture)
+- [When should users run each pipeline?](#When-should-users-run-each-pipeline)
+- [Dependencies & External Resources](#Dependencies-&-External-Resources)
+- [Installation](#Installation)
+- [Quick start](#Quick-Start:-Running-each-pipeline)
+- [Contact](#Contact)
+- [Acknowledgements](#Acknowledgements)
 
 ---
 
