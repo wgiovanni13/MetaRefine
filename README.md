@@ -33,15 +33,15 @@
 
 *MetaRefine is a modular Nextflow-based suite for **Prokaryotic Genome Refinement** that integrates:
 
-- ** Hybrid long and short redas metagenome assembly and iterative polishing (Pipeline 1) **
-- ** Metatranscriptome assembly and based evidence for codign sequences (Pipeline 2) **
-- ** Multi-tool structural and functional annotation refinement (Pipeline 3) **
-- ** Tool validation in Lokiarchaeota genome: Polishing and Transcriptome validation (Pipeline 4) **
+- **Hybrid long and short redas metagenome assembly and iterative polishing (Pipeline 1)**
+- **Metatranscriptome assembly and based evidence for codign sequences (Pipeline 2)**
+- **Multi-tool structural and functional annotation refinement (Pipeline 3)**
+- **Tool validation in Lokiarchaeota genome: Polishing and Transcriptome validation (Pipeline 4)**
 
 Although the framework is demonstrated on a **Lokiarchaeota B-35** genome, it is designed to be **generalizable to prokaryotic genomes** (Bacteria and Archaea) with a genetic code 11 and genetic code 34 to be incorporated soon, and applicable to:
 
 - Reference Genomes Only (Usage of Pipeline 3) 
-- Datasets where either ** DNA and RNA ** data are available (Usage of Pipeline 2 or 3)
+- Datasets where either **DNA and RNA** data are available (Usage of Pipeline 2 or 3)
 
 ---
 
