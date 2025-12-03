@@ -23,7 +23,7 @@
 - [When should users run each pipeline?](#When-should-users-run-each-pipeline)
 - [Dependencies & External Resources](#Dependencies-&-External-Resources)
 - [Installation](#Installation)
-- [Quick start](#Quick-Start:-Running-each-pipeline)
+- [Quick start](#Quick-Start)
 - [Contact](#Contact)
 - [Acknowledgements](#Acknowledgements)
 
