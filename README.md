@@ -17,7 +17,7 @@
 # Table of Contents
 
 - [About the project](#About-the-project)
-- [Biological & Conceptual Overview](Bbiological-&-Conceptual-Overview)
+- [Scientific Rationale](#Scientific-Rationale)
 - [Lokiarchaeon as a case of study](#Lokiarchaeon-as-a-case-of-study)
 - [Pipeline architecture](#Pipeline-architecture)
 - [When should users run each pipeline?](#When-should-users-run-each-pipeline)
@@ -29,45 +29,45 @@
 
 ---
 
-## 1. About the project
+## 1. About the Project
 
-*MetaRefine is a modular Nextflow-based suite for **Prokaryotic Genome Refinement** that integrates:
+MetaRefine is a modular Nextflow-based suite for **Prokaryotic Genome Refinement** that integrates:
 
-- **Hybrid long and short redas metagenome assembly and iterative polishing (Pipeline 1)**
-- **Metatranscriptome assembly and based evidence for codign sequences (Pipeline 2)**
-- **Multi-tool structural and functional annotation refinement (Pipeline 3)**
-- **Tool validation in Lokiarchaeota genome: Polishing and Transcriptome validation (Pipeline 4)**
+- **Hybrid long- and short-read metagenome assembly and iterative polishing (Pipeline 1)**
+- **Metatranscriptome assembly and evidence-based coding sequence identification (Pipeline 2)**
+- **Integrative structural and functional annotation refinement (Pipeline 3)**
+- **Tool assessment using the Asgard archaeal genome: polishing annotations and transcriptome-based validation (Pipeline 4)**
 
-Although the framework is demonstrated on a **Lokiarchaeota B-35** genome, it is designed to be **generalizable to prokaryotic genomes** (Bacteria and Archaea) with a genetic code 11 and genetic code 34 to be incorporated soon, and applicable to:
+Although the framework is demonstrated on a **Lokiarchaeota B-35** genome, it is designed to be **broadly applicable to prokaryotic genomes** (Bacteria and Archaea) with a genetic code 11 (genetic code 34 to be incorporated soon), and applicable to:
 
-- Reference Genomes Only (Usage of Pipeline 3) 
-- Datasets where either **DNA and RNA** data are available (Usage of Pipeline 2 or 3)
+- Reference genome only (Use Pipeline 3) 
+- Datasets where either **DNA or RNA** data are available (Use Pipeline 2 or 3)
 
 ---
 
-## 2. Biological & Conceptual Overview
+## 2. Scientific Rationale
 
-High-throughput sequencing has enabled reconstruction of prokaryotic genomes directly from complex environments. However:
+High-throughput sequencing has enabled the reconstruction of prokaryotic genomes directly from complex environments. However:
 
-- Assemblies can contain **local errors** (indels or mis-joins) that cause **frameshifts**.
-- Gene callers often **disagree* on gene boundaries and even presence/absence of genes.
+- Assemblies can contain **local errors** (indels or mis-joins) that cause **frameshifts** in protein-coding genes.
+- Conventional prokaryotic genome annotation tools often **disagree** on gene boundaries and even the presence or absence of genes.
 - **Metatranscriptomic evidence** is rarely used systematically to refine genome-level annotation. 
 
 ---
 
-## 3. Lokiarchaeon as a case of study
+## 3. Lokiarchaeon as a Case Study
 
 It is used to demonstrate:
 
-- How iterative polishing improves the genome compared to the published reference.
-- How multi-tool structural and functional annotation helps to identify frameshifts, new functional genes that can be missed by using only one annotation tool, and to correct gene boundaries.
-- How metatranscriptome helps **validate or challenge** predicted frameshifts and ultimately correct them. 
+- How iterative polishing improves the genome compared to the publicly available reference genomes.
+- How integrative structural and functional annotation helps to identify frameshifts and new functional genes that can be missed by using only a single tool, as well as correct gene boundaries.
+- How the metatranscriptomic data helps **validate or assess** frameshift errors and ultimately correct them. 
 
 ---
 
-## 4. Pipeline architecture
+## 4. Pipeline Architecture
 
-### 4.1. Pipeline Architecture for users 
+### 4.1. Pipeline architecture for users 
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -133,14 +133,14 @@ Polished Assembly → Multi-tool Annotation:
            ↓
     Final Annotation (.gff)+ Report
 ```
-### 4.2. Pipeline Architecture for Validation & Improvement Analysisi in Lokiarchaeon B-35
+### 4.2. Pipeline architecture for validation & improvement analysis in Lokiarchaeon B-35
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │               VALIDATION WORKFLOW in LOKI B-35              │
 └─────────────────────────────────────────────────────────────┘
 
-Pipeline 4: Validation & Improvement Analysis
+Pipeline 4: Refinement Assessment
 ==========================================================================
 
 Layer A: Genome Comparison
@@ -155,28 +155,28 @@ Run bi-directional BLAST to map CDS between both genomes
 
 Layer B: Transcriptome Based Validation
 
-Integration Frameshift results & DIAMOND frameshift calls
+Integrate frameshift results & DIAMOND frameshift calls
                  ↓
-Confirmation of conflict regions in transcriptome
+Confirm conflicting regions using transcriptome data
                  ↓
- Fusion detection & gene improvement 
+ Detect and correct chimeric genes 
                  ↓
-   Automated Genome correction 
+   Automated genome correction 
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-Layer C: Validation of Genome Correction
+Layer C: Validation of Corrected Genome
 
-Deletion of conflict region & Reannotation | Coverage-based improvement (short reads)
+Deletion and reannotation of conflicting regions | Coverage-based improvement (short reads)
 
 ---
 ```
 
-## 5. When should users run each pipeline?
+## 5. When Should Users Run Each Pipeline?
 
 MetaRefine is modular: users do **not** need to run all pipelines. Typical use-cases:
 
-### 5.1. Only a finished genome (no reads available)
+### 5.1. Only a reference genome (no reads available)
 
 You have a prokaryotic genome FASTA, but no raw sequencing data.
 
@@ -198,7 +198,7 @@ You have **Nanopore** and **Illumina short reads** from a metagenomic sample:
 - Goal: obtain a high-quality, polished genome and a refined annotation starting from raw metagenomic reads.
 
 
-### 5.3. Metatranscriptomic reads with a reference / polished genome
+### 5.3. Metatranscriptomic reads with a reference or polished genome
 
 You have **RNA-seq short reads** (metatranscriptome) and a reference genome (either from literature or from Pipeline 1).
 
@@ -235,7 +235,7 @@ You have:
 
 ## 6. Dependencies & External Resources
 
-### 6.1 Core Dependencies
+### 6.1 Core dependencies
 
 - Nextflow (≥ 21.x, DSL2 enabled)
 - Java 8 or newer
@@ -256,7 +256,7 @@ You have:
 - NextPolish
 - Pilon
 
-**Metatranscriptome Assembly (Pipeline 2)**
+**Metatranscriptome assembly (Pipeline 2)**
 
 - FastQC, MultiQC
 - fastp
@@ -266,6 +266,7 @@ You have:
 - minimap2
 
 **Annotation refinement (Pipeline 3)**
+
 - Prokka
 - Prodigal (genetic code 11; 34 coming soon)
 - GeneMarkS-2
@@ -277,13 +278,13 @@ You have:
 - DIAMOND
 - HHsuite (hhblits, hhmake and hhsearch)
 
-**Validation & improvement (Pipeline 4)**
+**Refinement assessment (Pipeline 4)**
 
 Same tools as above, plus:
-pysam (for transcriptome validation scripts)
-additional Python utilities for genome correction and coverage analysis
+- pysam (for transcriptome validation scripts)
+- additional Python utilities for genome correction and coverage analysis
 
-### 6.3 External Databases
+### 6.3 External databases
 
 - UniRef90 DIAMOND database (~45 GB)
 - UniClust30 (~86 GB)
@@ -295,7 +296,7 @@ additional Python utilities for genome correction and coverage analysis
 
 ```bash
 
-# Clone repository (needs to be finished)
+# Clone the repository (needs to be finished)
 
 git clone https://github.com/YourUsername/METAREFINE.git
 cd METAREFINE
@@ -313,7 +314,7 @@ conda env create -f envs/pipeline4.yml
 
 ### Run Individual Pipelines
 
-#### Pipeline 1: Metagenome Assembly & Polishing
+#### Pipeline 1: Metagenome Assembly & Genome Polishing
 
 ```bash
 cd metagenome
@@ -356,7 +357,7 @@ nextflow run main.nf \
   -profile <your_profile>
 ```
 
-#### Pipeline 4: Validation & Improvement Analysis
+#### Pipeline 4: Refinement Assessment
 
 ```bash
 cd tool_validation
